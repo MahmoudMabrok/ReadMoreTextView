@@ -1,25 +1,9 @@
-/*
- * Copyright (C) 2016 Borja Bravo
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.borjabravo.readmoretextview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.v4.content.ContextCompat;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextPaint;
@@ -29,6 +13,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 public class ReadMoreTextView extends TextView {
 
@@ -178,11 +164,30 @@ public class ReadMoreTextView extends TextView {
         this.trimLines = trimLines;
     }
 
+    private onClickReadMore onClickReadMore;
+
+    public ReadMoreTextView.onClickReadMore getOnClickReadMore() {
+        return onClickReadMore;
+    }
+
+    public void setOnClickReadMore(ReadMoreTextView.onClickReadMore onClickReadMore) {
+        this.onClickReadMore = onClickReadMore;
+    }
+
+    public interface onClickReadMore {
+        void onClick(View view);
+    }
+
+
     private class ReadMoreClickableSpan extends ClickableSpan {
         @Override
         public void onClick(View widget) {
             readMore = !readMore;
-            setText();
+            if (onClickReadMore != null) {
+                onClickReadMore.onClick(widget);
+            } else {
+                setText();
+            }
         }
 
         @Override
@@ -222,4 +227,6 @@ public class ReadMoreTextView extends TextView {
             e.printStackTrace();
         }
     }
+
+
 }
