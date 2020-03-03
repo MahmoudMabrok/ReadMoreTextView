@@ -1,6 +1,6 @@
 # ReadMoreTextView
 
-A Custom TextView with trim text
+A Custom TextView with trim text ability
 
 ## Download
 To add the ReadMoreTextView library to your Android Studio project, simply add the following gradle dependency:
