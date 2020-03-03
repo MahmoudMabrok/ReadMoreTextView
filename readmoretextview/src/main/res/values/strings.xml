@@ -1,4 +1,4 @@
 <resources>
-    <string name="read_more">show more</string>
-    <string name="read_less">show less</string>
+    <string name="read_more">see more</string>
+    <string name="read_less">see less</string>
 </resources>
