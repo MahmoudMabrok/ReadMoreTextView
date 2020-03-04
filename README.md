@@ -5,7 +5,7 @@ A Custom TextView with trim text ability
 ## Download
 To add the ReadMoreTextView library to your Android Studio project, simply add the following gradle dependency:
 ```java
-compile 'com.borjabravo:readmoretextview:2.1.0'
+ implementation 'com.github.MahmoudMabrok:ReadMoreTextView:2.2.2'
 ```
 
 ## Usage
@@ -38,7 +38,7 @@ You can customize ReadMoreTextView with:
 - Project was not maintained by owner so i forked it and will merge pull requests and add more it here 
 
 # Contributer 
-- [	chihung93](https://github.com/chihung93)
+- [	chihung93](https://github.com/chihung93) (Add Action when click on Expanded Text)
 
 License
 =======
