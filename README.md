@@ -33,6 +33,13 @@ You can customize ReadMoreTextView with:
 ![screenshot](screenshots/collapsed.png)
 ![screenshot](screenshots/expanded.png)
 
+
+# New 
+- Project was not maintained by owner so i forked it and will merge pull requests and add more it here 
+
+# Contributer 
+- [	chihung93](https://github.com/chihung93)
+
 License
 =======
 
